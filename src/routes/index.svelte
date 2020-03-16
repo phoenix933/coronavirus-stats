@@ -26,11 +26,27 @@
 </script>
 
 <script>
+	import { onMount } from 'svelte';
+
 	export let total;
 	export let countries;
 
+	let thead;
+	let theadTop;
+	let scrollY;
+	let sticky = false;
+
 	const formatNumber = (num) => num.toLocaleString('bg');
 	const getFlag = (code) => `https://www.countryflags.io/${code}/flat/24.png`
+
+	onMount(() => {
+		theadTop = thead.getBoundingClientRect().top;
+	});
+
+	function onScroll(event) {
+		sticky = scrollY > theadTop;
+	}
+
 </script>
 
 <svelte:head>
@@ -41,6 +57,8 @@
 	</title>
 </svelte:head>
 
+<svelte:window on:scroll={onScroll} bind:scrollY />
+
 <div class="container">
 	<h1>
 		Статистика за коронавирус COVID-19 (на живо)
@@ -48,8 +66,8 @@
 
 	{#if countries && countries.length}
 		<div class="table-wrapper">
-			<table>
-				<thead>
+			<table class:sticky style="margin-top: {sticky ? `${theadTop}px` : '0'};">
+				<thead bind:this={thead}>
 					<tr>
 						<th>Държава (и др.)</th>
 						<th>Случаи</th>
@@ -148,6 +166,33 @@
 	table td {
 		text-align: right;
 		padding: 1rem;
+		width: 15%;
+	}
+
+	table th:first-child, 
+	table td:first-child {
+		padding-left: 2.5rem;
+		text-align: left;
+		width: 25%;
+	}
+
+	table.sticky thead {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 1;
+	}
+
+	table.sticky thead tr {
+		margin: 0 30px;
+    	display: block;
+	}
+
+	.badge-wrapper {
+		position: relative;
+		display: flex;
+		flex-direction: column-reverse;
+		align-items: flex-end;
 	}
 
 	.country {
@@ -162,19 +207,6 @@
 
 	tbody tr:nth-child(2n + 1) {
 		background-color: #f8f6ff;
-	}
-
-	table th:first-child, 
-	table td:first-child {
-		padding-left: 2.5rem;
-		text-align: left;
-	}
-
-	.badge-wrapper {
-		position: relative;
-		display: flex;
-		flex-direction: column-reverse;
-		align-items: flex-end;
 	}
 
 	.badge {
@@ -249,6 +281,10 @@
 
 		table td {
 			font-size: 0.8125rem;
+		}
+
+		table.sticky thead tr {
+			margin: 0;
 		}
 	}
 </style>
