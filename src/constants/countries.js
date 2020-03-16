@@ -82,6 +82,10 @@ export const countriesMap = {
       "translated": "Гърция",
       "code": "GR"
     },
+    "Greenland": {
+      "translated": "Гренландия",
+      "code": "GL"
+    },
     "Canada": {
       "translated": "Канада",
       "code": "CA"
@@ -187,7 +191,8 @@ export const countriesMap = {
       "code": "LB"
     },
     "UAE": {
-      "translated": "ОАЕ"
+      "translated": "ОАЕ",
+      "code": "AE"
     },
     "Luxembourg": {
       "translated": "Люксембург",
@@ -214,7 +219,8 @@ export const countriesMap = {
       "code": "ZA"
     },
     "Taiwan": {
-      "translated": "Тайван"
+      "translated": "Тайван",
+      "code": "TW"
     },
     "Vietnam": {
       "translated": "Виетнам",
@@ -373,7 +379,8 @@ export const countriesMap = {
       "code": "DO"
     },
     "Faeroe Islands": {
-      "translated": "Фарьорски острови"
+      "translated": "Фарьорски острови",
+      "code": "FO"
     },
     "Jordan": {
       "translated": "Йордания",
@@ -412,7 +419,8 @@ export const countriesMap = {
       "code": "PY"
     },
     "Réunion": {
-      "translated": "Реюнион"
+      "translated": "Реюнион",
+      "code": "RE"
     },
     "Ghana": {
       "translated": "Гана",
@@ -510,21 +518,24 @@ export const countriesMap = {
       "code": "AW"
     },
     "Curaçao": {
-      "translated": "Curaçao"
+      "translated": "Кюрасао",
+      "code": "CW"
     },
     "DRC": {
-      "translated": "Демократична република Конго"
+      "translated": "Демократична република Конго",
+      "code": "CD"
     },
     "Namibia": {
       "translated": "Намибия",
       "code": "NA"
     },
     "Saint Lucia": {
-      "translated": "Света Лусия",
+      "translated": "Сейнт Лусия",
       "code": "LC"
     },
     "Saint Martin": {
-      "translated": "Свети Мартин"
+      "translated": "Свети Мартин",
+      "code": "MF"
     },
     "Trinidad and Tobago": {
       "translated": "Тринидад и Тобаго",
@@ -559,7 +570,8 @@ export const countriesMap = {
       "code": "KY"
     },
     "CAR": {
-      "translated": "Централнофриканска република"
+      "translated": "Централнофриканска република",
+      "code": "CF"
     },
     "Congo": {
       "translated": "Конго",
@@ -582,7 +594,20 @@ export const countriesMap = {
       "code": "GN"
     },
     "Vatican City": {
-      "translated": "Ватикана"
+      "translated": "Ватикана",
+      "code": "VA"
+    },
+    "Liberia": {
+      "translated": "Либерия",
+      "code": "LR"
+    },
+    "Somalia": {
+      "translated": "Сомалия",
+      "code": "SO"
+    },
+    "Tanzania": {
+      "translated": "Танзания",
+      "code": "TZ"
     },
     "Mauritania": {
       "translated": "Мавритания",
@@ -597,10 +622,12 @@ export const countriesMap = {
       "code": "MN"
     },
     "St. Barth": {
-      "translated": "Сейнт Барт"
+      "translated": "Сейнт Барт",
+      "code": "BL"
     },
     "St. Vincent Grenadines": {
-      "translated": "Св. Винсент Гренадини"
+      "translated": "Св. Винсент Гренадини",
+      "code": "VC"
     },
     "Suriname": {
       "translated": "Суринам",
@@ -613,7 +640,12 @@ export const countriesMap = {
       "translated": "Того",
       "code": "TG"
     },
+    "Benin": {
+      "translated": "Бенин",
+      "code": "BJ"
+    },
     "U.S. Virgin Islands": {
-      "translated": "Вирджински острови в САЩ"
+      "translated": "Вирджински острови в САЩ",
+      "code": "VI"
     }
 }
