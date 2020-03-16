@@ -52,12 +52,10 @@
 				<thead>
 					<tr>
 						<th>Държава (и др.)</th>
-						<th>Общо случаи</th>
-						<th>Случаи днес</th>
-						<th class="hide-mobile">Общо жертви</th>
-						<th class="hide-mobile">Жертви днес</th>
+						<th>Случаи</th>
+						<th class="deaths">Жертви</th>
 						<th class="hide-mobile">Оздравели</th>
-						<th class="hide-mobile">Активни случаи</th>
+						<th class="hide-mobile">Активни</th>
 						<th class="hide-mobile">В критично състояние</th>
 					</tr>
 				</thead>
@@ -65,16 +63,36 @@
 				<tbody>
 					{#each countries as { code, country, countryTranslated, cases, todayCases, deaths, todayDeaths, recovered, active, critical }}
 						<tr>
-							<td class="country">
-								{#if code}
-									<img src="{getFlag(code)}" alt={countryTranslated} />
-								{/if}
-								{countryTranslated || country}
+							<td>
+								<span class="country">
+									{#if code}
+										<img src="{getFlag(code)}" alt={countryTranslated} />
+									{/if}
+									{countryTranslated || country}
+								</span>
 							</td>
-							<td>{formatNumber(cases)}</td>
-							<td>{formatNumber(todayCases)}</td>
-							<td class="hide-mobile">{formatNumber(deaths)}</td>
-							<td class="hide-mobile">{formatNumber(todayDeaths)}</td>
+							<td>
+								<span class="badge-wrapper">
+									{formatNumber(cases)}
+
+									{#if todayCases}
+										<span class="badge warn">
+											+{formatNumber(todayCases)}
+										</span>
+									{/if}
+								</span>
+							</td>
+							<td class="deaths">
+								<span class="badge-wrapper">
+									{formatNumber(deaths)}
+
+									{#if todayDeaths}
+										<span class="badge danger">
+											+{formatNumber(todayDeaths)}
+										</span>
+									{/if}
+								</span>
+							</td>
 							<td class="hide-mobile">{formatNumber(recovered)}</td>
 							<td class="hide-mobile">{formatNumber(active)}</td>
 							<td class="hide-mobile">{formatNumber(critical)}</td>
@@ -124,16 +142,21 @@
 		font-size: 0.9rem;
 		color: #808080;
 		line-height: 1.4;
-
-		padding: 1rem 1rem 1rem 0;
 	}
 
-	table td.country {
+	table th,
+	table td {
+		text-align: right;
+		padding: 1rem;
+	}
+
+	.country {
 		display: flex;
 		align-items: center;
+		flex-direction: row;
 	}
 
-	table td.country img {
+	.country img {
 		margin-right: 0.5rem;
 	}
 
@@ -141,8 +164,38 @@
 		background-color: #f8f6ff;
 	}
 
-	table th:first-child, table td:first-child {
+	table th:first-child, 
+	table td:first-child {
 		padding-left: 2.5rem;
+		text-align: left;
+	}
+
+	.badge-wrapper {
+		position: relative;
+		display: flex;
+		flex-direction: column-reverse;
+		align-items: flex-end;
+	}
+
+	.badge {
+		white-space: nowrap;
+
+		font-size: 10px;
+		color: #fff;
+		text-align: center;
+		font-weight: bold;
+
+		border-radius: 12px;
+		padding: 4px 6px;
+	}
+
+	.badge.danger {
+		background-color: #ff5b5b;
+	}
+
+	.badge.warn {
+		background-color: #fff157;
+		color: #515151;
 	}
 
 	@media screen and (max-width: 1200px) { 
@@ -174,11 +227,19 @@
 			border-radius: 0;
 		}
 
-		table th:first-child, table td:first-child {
-			padding-left: 1rem;
+		table th,
+		table td {
+			padding: 1rem 0;
 		}
 
-		table th:last-child, table td:last-child {
+		table th:first-child, 
+		table td:first-child {
+			padding-left: 1rem;
+			max-width: 7rem;
+		}
+
+		table th.deaths, 
+		table td.deaths {
 			padding-right: 1rem;
 		}
 
