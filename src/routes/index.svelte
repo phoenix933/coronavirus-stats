@@ -63,13 +63,13 @@
 				</thead>
 
 				<tbody>
-					{#each countries as { code, countryTranslated, cases, todayCases, deaths, todayDeaths, recovered, active, critical }}
+					{#each countries as { code, country, countryTranslated, cases, todayCases, deaths, todayDeaths, recovered, active, critical }}
 						<tr>
 							<td class="country">
 								{#if code}
 									<img src="{getFlag(code)}" alt={countryTranslated} />
 								{/if}
-								{countryTranslated}
+								{countryTranslated || country}
 							</td>
 							<td>{formatNumber(cases)}</td>
 							<td>{formatNumber(todayCases)}</td>
