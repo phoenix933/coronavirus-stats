@@ -33,14 +33,20 @@
 
 	let thead;
 	let theadTop;
+	let theadHeight;
 	let scrollY;
 	let sticky = false;
+
+	const shortTitle = 'Статистика за коронавирус COVID-19 (на живо) | Коронавирус България';
+	const description = 'Статистика за коронавирус COVID-19 (на живо) - брой случаи, жертви, оздравели, активни.';
 
 	const formatNumber = (num) => num.toLocaleString('bg');
 	const getFlag = (code) => `https://www.countryflags.io/${code}/flat/24.png`
 
 	onMount(() => {
-		theadTop = thead.getBoundingClientRect().top;
+		const { top, height } = thead.getBoundingClientRect();
+		theadTop = top;
+		theadHeight = height;
 	});
 
 	function onScroll(event) {
@@ -55,6 +61,17 @@
 		{formatNumber(total.cases)} случая, {formatNumber(total.deaths)} жертви и {formatNumber(total.recovered)} оздравели 
 		| Коронавирус България
 	</title>
+
+	<meta name="description" content={description}>
+	<meta name="keywords" content="коронавирус, covid-19, статистика, държави, страни, българия, coronavirus, случаи, жертви, оздравели">
+
+	<meta property="og:type" content="website" />
+    <meta name="title" content={shortTitle} />
+    <meta property="og:title" content={shortTitle} />
+    <meta property="og:site_name" content="Koronavirus-bg.web.app" />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content="https://koronavirus-bg.web.app/" />
+	<meta property="og:image" content="https://nnimgt-a.akamaihd.net/transform/v1/crop/frm/tPntrWhUbGLyDWYCTv46rt/0dab4e06-6e41-445c-9ff9-6489cc366e23.jpg/r0_0_3840_2159_w1200_h678_fmax.jpg" />
 </svelte:head>
 
 <svelte:window on:scroll={onScroll} bind:scrollY />
@@ -64,9 +81,18 @@
 		Статистика за коронавирус COVID-19 (на живо)
 	</h1>
 
+	<p>
+		* Данните в този уебсайт са взети от публична уеб услуга 
+		<a href="https://github.com/javieraviles/covidAPI" target="_blank">Covid API</a>.
+		Собственикът на този уебсайт не носи отговорност за коректността на данните в него.
+		При неверни данни, моля свържете се със 
+		<a href="https://github.com/javieraviles" target="_blank">собственика</a> на уеб услугата
+		<a href="https://github.com/javieraviles/covidAPI" target="_blank">Covid API</a>.
+	</p>
+
 	{#if countries && countries.length}
 		<div class="table-wrapper">
-			<table class:sticky style="margin-top: {sticky ? `${theadTop}px` : '0'};">
+			<table class:sticky style="margin-top: {sticky ? `${theadHeight}px` : '0'};">
 				<thead bind:this={thead}>
 					<tr>
 						<th>Държава (и др.)</th>
@@ -128,8 +154,13 @@
 	}
 
 	h1 {
-		margin-bottom: 2rem;
+		margin-bottom: 0;
 		font-weight: bold;
+	}
+
+	p {
+		margin: 0.5rem 0 2rem;
+		font-size: 0.75rem;
 	}
 
 	.table-wrapper {
@@ -184,7 +215,7 @@
 
 	table.sticky thead tr {
 		width: 100%;
-    	display: block;
+    	display: inline-table;
 	}
 
 	.badge-wrapper {
@@ -249,9 +280,14 @@
 		}
 
 		h1 {
-			padding: 1rem;
-			margin-bottom: 1rem;
+			padding: 1rem 1rem 0;
 			font-size: 1.5rem;
+		}
+
+		p {
+			padding: 0 1rem 1rem;
+			margin-bottom: 1rem;
+			font-size: 0.6rem;
 		}
 
 		.table-wrapper {
