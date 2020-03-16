@@ -178,13 +178,12 @@
 
 	table.sticky thead {
 		position: fixed;
-		top: 0;
-		left: 0;
+		top: 0; left: 30px; right: 30px;
 		z-index: 1;
 	}
 
 	table.sticky thead tr {
-		margin: 0 30px;
+		width: 100%;
     	display: block;
 	}
 
@@ -283,8 +282,8 @@
 			font-size: 0.8125rem;
 		}
 
-		table.sticky thead tr {
-			margin: 0;
+		table.sticky thead {
+			left: 0; right: 0;
 		}
 	}
 </style>
