@@ -1,11 +1,24 @@
 <script context="module">
+	import { countriesMap } from '../constants/countries.js'
+
 	const apiUrl = 'https://coronavirus-19-api.herokuapp.com';
 	const allUrl = `${apiUrl}/all`;
 	const countriesUrl = `${apiUrl}/countries`;
 
 	export async function preload() {
 		const total = await (await this.fetch(allUrl)).json();
-		const countries = await (await this.fetch(countriesUrl)).json();
+		let countries = await (await this.fetch(countriesUrl)).json();
+
+		countries = countries.map(c => {
+			const found = countriesMap[c.country];
+			let mapped = { ...c };
+
+			if (found) {
+				mapped = { ...mapped, countryTranslated: found.translated, code: found.code };
+			}
+
+			return mapped;
+		});
 
 		return { total, countries };
 	}
@@ -15,46 +28,56 @@
 <script>
 	export let total;
 	export let countries;
+
+	const formatNumber = (num) => num.toLocaleString('bg');
+	const getFlag = (code) => `https://www.countryflags.io/${code}/flat/24.png`
 </script>
 
 <svelte:head>
 	<title>
-		Статистика за коронавирус (на живо) - {total.cases} случая, {total.deaths} жертви и {total.recovered} оздравели | COVID-19
+		Статистика за коронавирус COVID-19 (на живо) - 
+		{formatNumber(total.cases)} случая, {formatNumber(total.deaths)} жертви и {formatNumber(total.recovered)} оздравели 
+		| Коронавирус България
 	</title>
 </svelte:head>
 
 <div class="container">
-	<div class="total">
-
-	</div>
+	<h1>
+		Статистика за коронавирус COVID-19 (на живо)
+	</h1>
 
 	{#if countries && countries.length}
 		<div class="table-wrapper">
 			<table>
 				<thead>
 					<tr>
-						<th>Държава</th>
+						<th>Държава (и др.)</th>
 						<th>Общо случаи</th>
 						<th>Случаи днес</th>
-						<th>Общо жертви</th>
-						<th>Жертви днес</th>
-						<th>Оздравели</th>
-						<th>Активни случаи</th>
-						<th>В критично състояние</th>
+						<th class="hide-mobile">Общо жертви</th>
+						<th class="hide-mobile">Жертви днес</th>
+						<th class="hide-mobile">Оздравели</th>
+						<th class="hide-mobile">Активни случаи</th>
+						<th class="hide-mobile">В критично състояние</th>
 					</tr>
 				</thead>
 
 				<tbody>
-					{#each countries as { country, cases, todayCases, deaths, todayDeaths, recovered, active, critical }}
+					{#each countries as { code, countryTranslated, cases, todayCases, deaths, todayDeaths, recovered, active, critical }}
 						<tr>
-							<td>{country}</td>
-							<td>{cases}</td>
-							<td>{todayCases}</td>
-							<td>{deaths}</td>
-							<td>{todayDeaths}</td>
-							<td>{recovered}</td>
-							<td>{active}</td>
-							<td>{critical}</td>
+							<td class="country">
+								{#if code}
+									<img src="{getFlag(code)}" alt={countryTranslated} />
+								{/if}
+								{countryTranslated}
+							</td>
+							<td>{formatNumber(cases)}</td>
+							<td>{formatNumber(todayCases)}</td>
+							<td class="hide-mobile">{formatNumber(deaths)}</td>
+							<td class="hide-mobile">{formatNumber(todayDeaths)}</td>
+							<td class="hide-mobile">{formatNumber(recovered)}</td>
+							<td class="hide-mobile">{formatNumber(active)}</td>
+							<td class="hide-mobile">{formatNumber(critical)}</td>
 						</tr>
 					{/each}
 				</tbody>
@@ -66,6 +89,11 @@
 <style>
 	.container {
 		margin: 30px
+	}
+
+	h1 {
+		margin-bottom: 2rem;
+		font-weight: bold;
 	}
 
 	.table-wrapper {
@@ -80,7 +108,7 @@
 	}
 
 	table th {
-		font-size: 18px;
+		font-size: 1.125rem;
 		font-weight: bold;
 		color: #fff;
 		line-height: 1.4;
@@ -93,11 +121,20 @@
 	}
 
 	table td {
-		font-size: 15px;
+		font-size: 0.9rem;
 		color: #808080;
 		line-height: 1.4;
 
 		padding: 1rem 1rem 1rem 0;
+	}
+
+	table td.country {
+		display: flex;
+		align-items: center;
+	}
+
+	table td.country img {
+		margin-right: 0.5rem;
 	}
 
 	tbody tr:nth-child(2n + 1) {
@@ -106,5 +143,51 @@
 
 	table th:first-child, table td:first-child {
 		padding-left: 2.5rem;
+	}
+
+	@media screen and (max-width: 1200px) { 
+		table th {
+			font-size: 1rem;
+		}
+
+		table td {
+			font-size: 0.875rem;
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		.hide-mobile {
+			display: none! important;
+		}
+
+		.container {
+			margin: 0;
+		}
+
+		h1 {
+			padding: 1rem;
+			margin-bottom: 1rem;
+			font-size: 1.5rem;
+		}
+
+		.table-wrapper {
+			border-radius: 0;
+		}
+
+		table th:first-child, table td:first-child {
+			padding-left: 1rem;
+		}
+
+		table th:last-child, table td:last-child {
+			padding-right: 1rem;
+		}
+
+		table th {
+			font-size: 0.9rem;
+		}
+
+		table td {
+			font-size: 0.8125rem;
+		}
 	}
 </style>
