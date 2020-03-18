@@ -37,7 +37,7 @@
 	let scrollY;
 	let sticky = false;
 
-	const shortTitle = 'Статистика за коронавирус COVID-19 (на живо) | Коронавирус България';
+	const title = 'Статистика за коронавирус COVID-19 (на живо)';
 	const description = 'Статистика за коронавирус COVID-19 (на живо) - брой случаи, жертви, оздравели, активни.';
 
 	const formatNumber = (num) => num.toLocaleString('bg');
@@ -57,17 +57,16 @@
 
 <svelte:head>
 	<title>
-		Статистика за коронавирус COVID-19 (на живо) - 
-		{formatNumber(total.cases)} случая, {formatNumber(total.deaths)} жертви и {formatNumber(total.recovered)} оздравели 
-		| Коронавирус България
+		{title}
 	</title>
 
 	<meta name="description" content={description}>
 	<meta name="keywords" content="коронавирус, covid-19, статистика, държави, страни, българия, coronavirus, случаи, жертви, оздравели">
+	<link rel="canonical" href="https://koronavirus-bg.web.app/">
 
 	<meta property="og:type" content="website" />
-    <meta name="title" content={shortTitle} />
-    <meta property="og:title" content={shortTitle} />
+    <meta name="title" content={title} />
+    <meta property="og:title" content={title} />
     <meta property="og:site_name" content="Koronavirus-bg.web.app" />
     <meta property="og:description" content={description} />
     <meta property="og:url" content="https://koronavirus-bg.web.app/" />
@@ -78,7 +77,7 @@
 
 <div class="container">
 	<h1>
-		Статистика за коронавирус COVID-19 (на живо)
+		{title}
 	</h1>
 
 	<p>
