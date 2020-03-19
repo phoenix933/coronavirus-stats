@@ -45,8 +45,10 @@
         width: 30%;
         border-radius: 10px;
 
-        background: #fff157;
+        background: #f8f6ff;
         color: #515151;
+        box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.15);
+        
         font-weight: bold;
 	}
 
