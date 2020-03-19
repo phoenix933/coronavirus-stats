@@ -180,7 +180,7 @@
 	.table-wrapper {
 		border-radius: 10px;
 		overflow: hidden;
-		box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+		box-shadow: 0 2px 40px 0px rgba(0, 0, 0, 0.15);
 	}
 
 	table {
@@ -312,6 +312,7 @@
 
 		.table-wrapper {
 			border-radius: 0;
+			box-shadow: none;
 		}
 
 		table th,
