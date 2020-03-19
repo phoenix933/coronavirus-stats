@@ -19,3 +19,19 @@ h1 {
 a {
 	color: inherit;
 }
+
+@media screen and (max-width: 768px) {
+	h1 {
+		font-size: 1.5rem;
+	}
+
+	h2 {
+		font-size: 1.2rem;
+	}
+
+	h1,
+	h2 {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+}

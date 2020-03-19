@@ -26,7 +26,9 @@
 </script>
 
 <script>
+	import Breakdown from '../components/Breakdown.svelte'
 	import { onMount } from 'svelte';
+	import { formatNumber } from '../utils'
 
 	export let total;
 	export let countries;
@@ -40,7 +42,8 @@
 	const title = 'Статистика за коронавирус COVID-19 (на живо)';
 	const description = 'Статистика за коронавирус COVID-19 (на живо) - брой случаи, жертви, оздравели, активни.';
 
-	const formatNumber = (num) => num.toLocaleString('bg');
+	const bulgaria = countries.find(c => c.code && c.code.toLowerCase() === 'bg');
+
 	const getFlag = (code) => `https://www.countryflags.io/${code}/flat/24.png`
 
 	onMount(() => {
@@ -91,7 +94,17 @@
 		<a href="https://github.com/javieraviles/covidAPI" target="_blank">Covid API</a>.
 	</p>
 
+	{#if total}
+		<Breakdown title="🌍 В целия свят" {...total} />
+	{/if}
+
+	{#if bulgaria}
+		<Breakdown title="🇧🇬 В България" {...bulgaria} />
+	{/if}
+
 	{#if countries && countries.length}
+		<h2>🚩 По държави</h2>
+
 		<div class="table-wrapper">
 			<table class:sticky style="margin-top: {sticky ? `${theadHeight}px` : '0'};">
 				<thead bind:this={thead}>
@@ -288,8 +301,7 @@
 		}
 
 		h1 {
-			padding: 1rem 1rem 0;
-			font-size: 1.5rem;
+			padding-top: 1rem;
 		}
 
 		p {
