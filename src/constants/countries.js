@@ -634,7 +634,8 @@ export const countriesMap = {
       "code": "SR"
     },
     "Eswatini": {
-      "translated": "Есватини"
+      "translated": "Есватини",
+      "code": "SZ"
     },
     "Togo": {
       "translated": "Того",
@@ -647,5 +648,65 @@ export const countriesMap = {
     "U.S. Virgin Islands": {
       "translated": "Вирджински острови в САЩ",
       "code": "VI"
-    }
+    },
+    "Sint Maarten": {
+      "translated": "Синт Мартен",
+      "code": "SX"
+    },
+    "Nicaragua": {
+      "translated": "Никарагуа",
+      "code": "NI"
+    },
+    "Montserrat": {
+      "translated": "Монсерат",
+      "code": "MS"
+    },
+    "Gambia": {
+      "translated": "Гамбия",
+      "code": "GM"
+    },
+    "Fiji": {
+      "translated": "Фиджи",
+      "code": "FJ"
+    },
+    "El Salvador": {
+      "translated": "Ел Салвадор",
+      "code": "SV"
+    },
+    "Djibouti": {
+      "translated": "Джибути",
+      "code": "DJ"
+    },
+    "Chad": {
+      "translated": "Чад",
+      "code": "TD"
+    },
+    "Zambia": {
+      "translated": "Замбия",
+      "code": "ZM"
+    },
+    "New Caledonia": {
+      "translated": "Нова Каледония",
+      "code": "NC"
+    },
+    "Bermuda": {
+      "translated": "Бермуда",
+      "code": "BM"
+    },
+    "Barbados": {
+      "translated": "Барбадос",
+      "code": "BB"
+    },
+    "Mauritius": {
+      "translated": "Мавриций",
+      "code": "MU"
+    },
+    "Kyrgyzstan": {
+      "translated": "Киргизстан",
+      "code": "KG"
+    },
+    "Montenegro": {
+      "translated": "Черна гора",
+      "code": "ME"
+    },
 }
