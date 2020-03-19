@@ -199,6 +199,7 @@
 		text-align: right;
 		padding: 1rem;
 		width: 15%;
+		word-break: break-word;
 	}
 
 	table th:first-child, 
@@ -267,6 +268,12 @@
 		}
 
 		table td {
+			font-size: 0.875rem;
+		}
+	}
+
+	@media screen and (max-width: 1024px) { 
+		table th {
 			font-size: 0.875rem;
 		}
 	}
