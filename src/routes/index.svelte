@@ -27,6 +27,7 @@
 
 <script>
 	import Breakdown from '../components/Breakdown.svelte'
+	import Disclaimer from '../components/Disclaimer.svelte';
 	import Table from '../components/Table.svelte'
 
 	export let total;
@@ -64,18 +65,7 @@
 		{title}
 	</h1>
 
-	<p>
-		* Този уебсайт (koronavirus-bg) използва данни от уебсайта
-		<a href="https://www.worldometers.info/coronavirus/" traget="_blank">Worldometer</a>, 
-		посредством публичната уеб услуга 
-		<a href="https://github.com/javieraviles/covidAPI" target="_blank">Covid API</a>.
-		Собственикът на този уебсайт (koronavirus-bg) не носи отговорност за коректността на данните в него.
-		При неверни данни, моля свържете се със 
-		<a href="https://github.com/javieraviles" target="_blank">собственика</a> на уеб услугата
-		<a href="https://github.com/javieraviles/covidAPI" target="_blank">Covid API</a> - 
-		<a href="https://github.com/javieraviles" target="_blank">Javier Aviles</a> или с 
-		<a href="https://www.worldometers.info/contact/" target="_blank">Worldometer</a>.
-	</p>
+	<Disclaimer />
 
 	<p class="github">
 		<a href="https://github.com/yuliankarapetkov/coronavirus-stats" target="_blank">
@@ -101,16 +91,6 @@
 		margin: 30px
 	}
 
-	h1 {
-		margin-bottom: 0;
-		font-weight: bold;
-	}
-
-	p {
-		margin: 0.5rem 0 0;
-		font-size: 0.75rem;
-	}
-
 	.github a {
 		display: flex;
 		align-items: center;
@@ -125,15 +105,6 @@
 	@media screen and (max-width: 768px) {
 		.container {
 			margin: 0;
-		}
-
-		h1 {
-			padding-top: 1rem;
-		}
-
-		p {
-			padding: 0 1rem 0;
-			font-size: 0.6rem;
 		}
 
 		.github {

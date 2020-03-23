@@ -14,6 +14,13 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
 	font-size: 2em;
+	margin-bottom: 0;
+	font-weight: bold;
+}
+
+p {
+	margin: 0.5rem 0 0;
+	font-size: 0.75rem;
 }
 
 a {
@@ -23,6 +30,7 @@ a {
 @media screen and (max-width: 768px) {
 	h1 {
 		font-size: 1.5rem;
+		padding-top: 1rem;
 	}
 
 	h2 {
@@ -33,5 +41,10 @@ a {
 	h2 {
 		padding-left: 1rem;
 		padding-right: 1rem;
+	}
+
+	p {
+		padding: 0 1rem 0;
+		font-size: 0.6rem;
 	}
 }
