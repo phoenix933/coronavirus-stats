@@ -28,6 +28,7 @@
 <script>
 	import Breakdown from '../components/Breakdown.svelte'
 	import Disclaimer from '../components/Disclaimer.svelte';
+	import GitHubLink from '../components/GitHubLink.svelte';
 	import Table from '../components/Table.svelte'
 
 	export let total;
@@ -67,11 +68,7 @@
 
 	<Disclaimer />
 
-	<p class="github">
-		<a href="https://github.com/yuliankarapetkov/coronavirus-stats" target="_blank">
-			<img src="/images/github.png" alt="Github logo" /> Source code
-		</a>
-	</p>
+	<GitHubLink />
 
 	{#if total}
 		<Breakdown title="🌍 В целия свят" {...total} />
@@ -91,24 +88,9 @@
 		margin: 30px
 	}
 
-	.github a {
-		display: flex;
-		align-items: center;
-		margin-bottom: 2rem;
-	}
-
-	.github a img {
-		height: 1.5rem;
-		margin-right: 0.5rem;
-	}
-
 	@media screen and (max-width: 768px) {
 		.container {
 			margin: 0;
-		}
-
-		.github {
-			margin-bottom: 2rem;
 		}
 	}
 </style>
