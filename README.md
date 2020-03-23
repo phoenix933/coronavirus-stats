@@ -20,3 +20,7 @@ npm run dev
 ```
 
 Open up [localhost:3000](http://localhost:3000) and start clicking around.
+
+## Contribution
+
+If you want to contribute, feel free to raise issues or create pull requests.
