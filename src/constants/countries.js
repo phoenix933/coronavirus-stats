@@ -709,4 +709,80 @@ export const countriesMap = {
       "translated": "Черна гора",
       "code": "ME"
     },
+    "Uganda": {
+      "translated": "Уганда",
+      "code": "UG"
+    },
+    "Turks and Caicos": {
+      "translated": "Търкс и Кайкос",
+      "code": "TC"
+    },
+    "Timor-Leste": {
+      "translated": "Източен Тимор",
+      "code": "TL"
+    },
+    "Syria": {
+      "translated": "Сирия",
+      "code": "SY"
+    },
+    "Papua New Guinea": {
+      "translated": "Папуа-Нова Гвинея",
+      "code": "PG"
+    },
+    "Mozambique": {
+      "translated": "Мозамбик",
+      "code": "MZ"
+    },
+    "Grenada": {
+      "translated": "Гренада",
+      "code": "GD"
+    },
+    "Eritrea": {
+      "translated": "Еритрея",
+      "code": "ER"
+    },
+    "Dominica": {
+      "translated": "Доминика",
+      "code": "DM"
+    },
+    "Belize": {
+      "translated": "Белиз",
+      "code": "BZ"
+    },
+    "Niger": {
+      "translated": "Нигер",
+      "code": "NE"
+    },
+    "Myanmar": {
+      "translated": "Мианмар",
+      "code": "MM"
+    },
+    "Angola": {
+      "translated": "Ангола",
+      "code": "AO"
+    },
+    "Cabo Verde": {
+      "translated": "Кабо Верде",
+      "code": "CV"
+    },
+    "Zimbabwe": {
+      "translated": "Зимбабве",
+      "code": "ZW"
+    },
+    "Haiti": {
+      "translated": "Зимбабве",
+      "code": "HT"
+    },
+    "Madagascar": {
+      "translated": "Мадагаскар",
+      "code": "MG"
+    },
+    "Isle of Man": {
+      "translated": "Остров Ман",
+      "code": "IM"
+    },
+    "Isle of Man": {
+      "translated": "Остров Ман",
+      "code": "IM"
+    },
 }
