@@ -86,12 +86,22 @@
 	</h1>
 
 	<p>
-		* Данните в този уебсайт са взети от публична уеб услуга 
+		* Този уебсайт (koronavirus-bg) използва данни от уебсайта
+		<a href="https://www.worldometers.info/coronavirus/" traget="_blank">Worldometer</a>, 
+		посредством публичната уеб услуга 
 		<a href="https://github.com/javieraviles/covidAPI" target="_blank">Covid API</a>.
-		Собственикът на този уебсайт не носи отговорност за коректността на данните в него.
+		Собственикът на този уебсайт (koronavirus-bg) не носи отговорност за коректността на данните в него.
 		При неверни данни, моля свържете се със 
 		<a href="https://github.com/javieraviles" target="_blank">собственика</a> на уеб услугата
-		<a href="https://github.com/javieraviles/covidAPI" target="_blank">Covid API</a>.
+		<a href="https://github.com/javieraviles/covidAPI" target="_blank">Covid API</a> - 
+		<a href="https://github.com/javieraviles" target="_blank">Javier Aviles</a> или с 
+		<a href="https://www.worldometers.info/contact/" target="_blank">Worldometer</a>.
+	</p>
+
+	<p class="github">
+		<a href="https://github.com/yuliankarapetkov/coronavirus-stats" target="_blank">
+			<img src="/images/github.png" alt="Github logo" /> Source code
+		</a>
 	</p>
 
 	{#if total}
@@ -173,8 +183,19 @@
 	}
 
 	p {
-		margin: 0.5rem 0 2rem;
+		margin: 0.5rem 0 0;
 		font-size: 0.75rem;
+	}
+
+	.github a {
+		display: flex;
+		align-items: center;
+		margin-bottom: 2rem;
+	}
+
+	.github a img {
+		height: 1.5rem;
+		margin-right: 0.5rem;
 	}
 
 	.table-wrapper {
@@ -305,9 +326,12 @@
 		}
 
 		p {
-			padding: 0 1rem 1rem;
-			margin-bottom: 1rem;
+			padding: 0 1rem 0;
 			font-size: 0.6rem;
+		}
+
+		.github {
+			margin-bottom: 2rem;
 		}
 
 		.table-wrapper {
