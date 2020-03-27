@@ -18,7 +18,7 @@
 			}
 
 			return mapped;
-		});
+		}).sort((a, b) => b.cases - a.cases);
 
 		return { total, countries };
 	}
