@@ -1,10 +1,13 @@
 <script>
-    import { formatNumber } from '../utils'
+    import Badge from './Badge.svelte';
+    import { formatNumber } from '../utils';
 
     export let title = null;
     export let cases = 0;
     export let deaths = 0;
     export let recovered = 0;
+    export let todayCases = 0;
+    export let todayDeaths = 0;
 
 </script>
 
@@ -12,12 +15,26 @@
 
 <div class="total">
     <div>
-        <span>{formatNumber(cases)}</span>
+        <span>
+            {#if todayCases}
+                <Badge color="warn">
+                    +{formatNumber(todayCases)}
+                </Badge>
+            {/if}
+            {formatNumber(cases)}
+        </span>
         <span>случая</span>
     </div>
 
     <div>
-        <span>{formatNumber(deaths)}</span>
+        <span>
+            {#if todayDeaths}
+                <Badge color="danger">
+                    +{formatNumber(todayDeaths)}
+                </Badge>
+            {/if}
+            {formatNumber(deaths)}
+        </span>
         <span>жертви</span>
     </div>
 
@@ -54,11 +71,18 @@
 
     .total div span:first-child {
         font-size: 1.5rem;
+        position: relative;
     }
 
     .total div span:last-child {
         text-transform: uppercase;
         font-size: 0.8rem;
+    }
+
+    .total div :global(.badge) {
+        position: absolute;
+        transform: translateX(100%);
+        right: 0;
     }
 
     @media screen and (max-width: 768px) {

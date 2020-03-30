@@ -1,5 +1,5 @@
 <script context="module">
-	import { countriesMap } from '../constants/countries.js'
+	import { countriesMap } from '../constants/countries.js';
 
 	const apiUrl = 'https://coronavirus-19-api.herokuapp.com';
 	const allUrl = `${apiUrl}/all`;
@@ -26,10 +26,10 @@
 </script>
 
 <script>
-	import Breakdown from '../components/Breakdown.svelte'
+	import Breakdown from '../components/Breakdown.svelte';
 	import Disclaimer from '../components/Disclaimer.svelte';
 	import GitHubLink from '../components/GitHubLink.svelte';
-	import Table from '../components/Table.svelte'
+	import Table from '../components/Table.svelte';
 
 	export let total;
 	export let countries;

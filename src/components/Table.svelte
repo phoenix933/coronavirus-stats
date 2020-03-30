@@ -1,5 +1,6 @@
 <script>
-    import { formatNumber } from '../utils'
+	import Badge from './Badge.svelte';
+    import { formatNumber } from '../utils';
     import { onMount } from 'svelte';
 
     export let countries;
@@ -57,9 +58,9 @@
                             {formatNumber(cases)}
 
                             {#if todayCases}
-                                <span class="badge warn">
+                                <Badge color="warn">
                                     +{formatNumber(todayCases)}
-                                </span>
+                                </Badge>
                             {/if}
                         </span>
                     </td>
@@ -68,9 +69,9 @@
                             {formatNumber(deaths)}
 
                             {#if todayDeaths}
-                                <span class="badge danger">
+                                <Badge color="danger">
                                     +{formatNumber(todayDeaths)}
-                                </span>
+                                </Badge>
                             {/if}
                         </span>
                     </td>
@@ -159,27 +160,6 @@
 
 	tbody tr:nth-child(2n + 1) {
 		background-color: #f8f6ff;
-	}
-
-	.badge {
-		white-space: nowrap;
-
-		font-size: 10px;
-		color: #fff;
-		text-align: center;
-		font-weight: bold;
-
-		border-radius: 12px;
-		padding: 4px 6px;
-	}
-
-	.badge.danger {
-		background-color: #ff5b5b;
-	}
-
-	.badge.warn {
-		background-color: #fff157;
-		color: #515151;
 	}
 
 	@media screen and (max-width: 1200px) { 
