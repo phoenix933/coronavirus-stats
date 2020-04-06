@@ -785,4 +785,82 @@ export const countriesMap = {
       "translated": "Остров Ман",
       "code": "IM"
     },
+    "World": {
+      "translated": "В света"
+    },
+    "South Sudan": {
+      "translated": "Южен Судан",
+      "code": "SS"
+    },
+    "Saint Pierre Miquelon": {
+      "translated": "Сен Пиер Микелон",
+      "code": "PM"
+    },
+    "Falkland Islands": {
+      "translated": "Фолкландските острови",
+      "code": "FK"
+    },
+    "Caribbean Netherlands": {
+      "translated": "Фолкландските острови",
+      "code": "BQ"
+    },
+    "Burundi": {
+      "translated": "Бурунди",
+      "code": "BI"
+    },
+    "British Virgin Islands": {
+      "translated": "Британски Вирджински острови",
+      "code": "VG"
+    },
+    "Anguilla": {
+      "translated": "Ангуила",
+      "code": "AI"
+    },
+    "Western Sahara": {
+      "translated": "Западна Сахара",
+      "code": "EH"
+    },
+    "Sao Tome and Principe": {
+      "translated": "Сао Томе и Принсипи",
+      "code": "ST"
+    },
+    "Malawi": {
+      "translated": "Малави",
+      "code": "MW"
+    },
+    "Sierra Leone": {
+      "translated": "Сиера Леоне",
+      "code": "SL"
+    },
+    "Botswana": {
+      "translated": "Ботсвана",
+      "code": "BW"
+    },
+    "MS Zaandam": {
+      "translated": "Круизен кораб MS Zaandam"
+    },
+    "Saint Kitts and Nevis": {
+      "translated": "Сейнт Китс и Невис",
+      "code": "KN"
+    },
+    "Laos": {
+      "translated": "Лаос",
+      "code": "LA"
+    },
+    "Guinea-Bissau": {
+      "translated": "Гвинея-Бисау",
+      "code": "GW"
+    },
+    "Libya": {
+      "translated": "Либия",
+      "code": "LY"
+    },
+    "Mali": {
+      "translated": "Мали",
+      "code": "ML"
+    },
+    "Mali": {
+      "translated": "Мали",
+      "code": "ML"
+    }
 }
