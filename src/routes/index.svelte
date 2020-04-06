@@ -6,20 +6,25 @@
 	const countriesUrl = `${apiUrl}/countries`;
 
 	export async function preload() {
-		const total = await (await this.fetch(allUrl)).json();
-		let countries = await (await this.fetch(countriesUrl)).json();
+		let total = {};
+		let countries = [];
 
-		countries = countries.map(c => {
-			const found = countriesMap[c.country];
-			let mapped = { ...c };
+		try {
+			total = await (await this.fetch(allUrl)).json();
+			countries = await (await this.fetch(countriesUrl)).json();
 
-			if (found) {
-				mapped = { ...mapped, countryTranslated: found.translated, code: found.code };
-			}
+			countries = countries.map(c => {
+				const found = countriesMap[c.country];
+				let mapped = { ...c };
 
-			return mapped;
-		}).sort((a, b) => b.cases - a.cases);
+				if (found) {
+					mapped = { ...mapped, countryTranslated: found.translated, code: found.code };
+				}
 
+				return mapped;
+			}).sort((a, b) => b.cases - a.cases);
+		} catch (e) {}
+		
 		return { total, countries };
 	}
 
