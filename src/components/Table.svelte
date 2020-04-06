@@ -49,7 +49,11 @@
                         <span class="country">
                             {#if code}
                                 <img src="{getFlag(code)}" alt={countryTranslated} />
-                            {/if}
+                            {:else if country === 'World'}
+								🌍
+							{:else}
+								🏴
+							{/if}
                             {countryTranslated || country}
                         </span>
                     </td>
