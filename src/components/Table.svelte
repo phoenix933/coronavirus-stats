@@ -1,6 +1,6 @@
 <script>
 	import Badge from './Badge.svelte';
-    import { formatNumber } from '../utils';
+    import { formatNumber, getFlag } from '../utils';
     import { onMount } from 'svelte';
 
     export let countries;
@@ -10,8 +10,6 @@
 	let theadHeight;
 	let scrollY;
     let sticky = false;
-    
-    const getFlag = (code) => `https://www.countryflags.io/${code}/flat/24.png`;
 
     onMount(() => {
 		const { top, height } = thead.getBoundingClientRect();
@@ -27,13 +25,13 @@
 
 <svelte:window on:scroll={onScroll} bind:scrollY />
 
-<h2>🚩 По държави</h2>
+<h2>🏴 По държави</h2>
 
 <div class="table-wrapper">
     <table class:sticky style="margin-top: {sticky ? `${theadHeight}px` : '0'};">
         <thead bind:this={thead}>
             <tr>
-                <th>Държава (и др.)</th>
+                <th>Държава</th>
                 <th>Случаи</th>
                 <th class="deaths">Жертви</th>
                 <th class="hide-mobile">Оздравели</th>
@@ -44,13 +42,11 @@
 
         <tbody>
             {#each countries as { code, country, countryTranslated, cases, todayCases, deaths, todayDeaths, recovered, active, critical }}
-                <tr>
+                <tr class:marked={code === 'BG'}>
                     <td>
                         <span class="country">
                             {#if code}
-                                <img src="{getFlag(code)}" alt={countryTranslated} />
-                            {:else if country === 'World'}
-								🌍
+                                <img src={getFlag(code)} alt={countryTranslated} />
 							{:else}
 								🏴
 							{/if}
@@ -164,6 +160,10 @@
 
 	tbody tr:nth-child(2n + 1) {
 		background-color: #f8f6ff;
+	}
+
+	tbody tr.marked {
+		background-color: #fff15799;
 	}
 
 	@media screen and (max-width: 1200px) { 

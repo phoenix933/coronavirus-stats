@@ -2,7 +2,6 @@
     import Badge from './Badge.svelte';
     import { formatNumber } from '../utils';
 
-    export let title = null;
     export let cases = 0;
     export let deaths = 0;
     export let recovered = 0;
@@ -11,7 +10,7 @@
 
 </script>
 
-<h2>{title}</h2>
+<h2><slot /></h2>
 
 <div class="total">
     <div>
@@ -45,6 +44,15 @@
 </div>
 
 <style>
+    h2 {
+        display: flex;
+        align-items: center;
+    }
+
+    h2 :global(img) {
+        margin-right: 0.5rem;
+    }
+
 	.total {
 		display: flex;
         justify-content: space-between;

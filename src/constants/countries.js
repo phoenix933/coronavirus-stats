@@ -67,9 +67,6 @@ export const countriesMap = {
       "translated": "Япония",
       "code": "JP"
     },
-    "Diamond Princess": {
-      "translated": "Круизен кораб \"Даймънд принсес\""
-    },
     "Malaysia": {
       "translated": "Малайзия",
       "code": "MY"
@@ -836,9 +833,6 @@ export const countriesMap = {
       "translated": "Ботсвана",
       "code": "BW"
     },
-    "MS Zaandam": {
-      "translated": "Круизен кораб MS Zaandam"
-    },
     "Saint Kitts and Nevis": {
       "translated": "Сейнт Китс и Невис",
       "code": "KN"
@@ -864,3 +858,15 @@ export const countriesMap = {
       "code": "ML"
     }
 }
+
+export const excluded = [
+  'World',
+  'Europe',
+  'North America',
+  'Asia',
+  'Oceania',
+  'South America',
+  'Africa',
+  'Diamond Princess',
+  'MS Zaandam'
+]
