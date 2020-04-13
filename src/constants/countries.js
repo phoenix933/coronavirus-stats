@@ -868,5 +868,6 @@ export const excluded = [
   'South America',
   'Africa',
   'Diamond Princess',
-  'MS Zaandam'
+  'MS Zaandam',
+  'Total:'
 ]
