@@ -1,8 +1,9 @@
 <script context="module">
 	import { countriesMap, excluded } from '../constants/countries.js';
 
-	const apiUrl = 'https://coronavirus-19-api.herokuapp.com';
+	const apiUrl = 'https://corona.lmao.ninja/v2';
 	const countriesUrl = `${apiUrl}/countries`;
+	const worldUrl = `${apiUrl}/all`;
 
 	export async function preload() {
 		let countries = [];
@@ -10,7 +11,7 @@
 
 		try {
 			countries = await (await this.fetch(countriesUrl)).json();
-			world = countries.find(c => c.country === 'World');
+			world = await (await this.fetch(worldUrl)).json();
 
 			countries = countries.map(c => {
 				const found = countriesMap[c.country];
@@ -43,7 +44,7 @@
 	export let world;
 
 	let date = new Date().toLocaleDateString();
-	const bulgaria = countries.find(c => c.code && c.code.toLowerCase() === 'bg');
+	const bulgaria = countries && countries.find(c => c.code && c.code.toLowerCase() === 'bg');
 
 	$: title = `Статистика за коронавирус COVID-19 на ${date}`;
 	$: description = `Статистика за коронавирус COVID-19 на ${date} - брой случаи, жертви, оздравели, активни.`;
