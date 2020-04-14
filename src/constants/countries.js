@@ -311,7 +311,7 @@ export const countriesMap = {
       "translated": "Сенегал",
       "code": "SN"
     },
-    "Bosnia and Herzegovina": {
+    "Bosnia": {
       "translated": "Босна и Херцеговина",
       "code": "BA"
     },
@@ -335,7 +335,7 @@ export const countriesMap = {
       "translated": "Тунис",
       "code": "TN"
     },
-    "North Macedonia": {
+    "Macedonia": {
       "translated": "Северна Македония",
       "code": "MK"
     },
@@ -375,7 +375,7 @@ export const countriesMap = {
       "translated": "Доминиканска република",
       "code": "DO"
     },
-    "Faeroe Islands": {
+    "Faroe Islands": {
       "translated": "Фарьорски острови",
       "code": "FO"
     },
@@ -447,7 +447,7 @@ export const countriesMap = {
       "translated": "Камерун",
       "code": "CM"
     },
-    "Ivory Coast": {
+    "Côte d'Ivoire": {
       "translated": "Кот д'Ивоар",
       "code": "CI"
     },
@@ -566,7 +566,7 @@ export const countriesMap = {
       "translated": "Кайманови острови",
       "code": "KY"
     },
-    "CAR": {
+    "Central African Republic": {
       "translated": "Централнофриканска република",
       "code": "CF"
     },
@@ -590,7 +590,7 @@ export const countriesMap = {
       "translated": "Гвинея",
       "code": "GN"
     },
-    "Vatican City": {
+    "Holy See (Vatican City State)": {
       "translated": "Ватикана",
       "code": "VA"
     },
@@ -622,7 +622,7 @@ export const countriesMap = {
       "translated": "Сейнт Барт",
       "code": "BL"
     },
-    "St. Vincent Grenadines": {
+    "Saint Vincent and the Grenadines": {
       "translated": "Св. Винсент Гренадини",
       "code": "VC"
     },
@@ -710,7 +710,7 @@ export const countriesMap = {
       "translated": "Уганда",
       "code": "UG"
     },
-    "Turks and Caicos": {
+    "Turks and Caicos Islands": {
       "translated": "Търкс и Кайкос",
       "code": "TC"
     },
@@ -718,7 +718,7 @@ export const countriesMap = {
       "translated": "Източен Тимор",
       "code": "TL"
     },
-    "Syria": {
+    "Syrian Arab Republic": {
       "translated": "Сирия",
       "code": "SY"
     },
@@ -837,7 +837,7 @@ export const countriesMap = {
       "translated": "Сейнт Китс и Невис",
       "code": "KN"
     },
-    "Laos": {
+    "Lao People's Democratic Republic": {
       "translated": "Лаос",
       "code": "LA"
     },
@@ -845,7 +845,7 @@ export const countriesMap = {
       "translated": "Гвинея-Бисау",
       "code": "GW"
     },
-    "Libya": {
+    "Libyan Arab Jamahiriya": {
       "translated": "Либия",
       "code": "LY"
     },
