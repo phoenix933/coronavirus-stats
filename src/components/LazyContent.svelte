@@ -21,8 +21,10 @@
 
 </script>
 
-<div class="lazy-content" bind:this={wrapper}>
-</div>
+{#if !inView}
+  <div class="lazy-content" bind:this={wrapper}>
+  </div>
+{/if}
 
 {#if inView}
   <slot />
