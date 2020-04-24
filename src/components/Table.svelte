@@ -46,7 +46,7 @@
                     <td>
                         <span class="country">
                             {#if code}
-                                <img src={getFlag(code)} alt={countryTranslated} />
+                                <img src={getFlag(code)} alt={countryTranslated} loading="lazy" />
 							{:else}
 								🏴
 							{/if}
