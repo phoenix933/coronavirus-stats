@@ -6,7 +6,7 @@
   let inView = false
 
   function onScroll () {
-    if (inViewport(wrapper)) {
+    if (inViewport(wrapper, false, { top: 100, bottom: 100 })) {
       inView = true
       document.removeEventListener('scroll', onScroll)
     }
