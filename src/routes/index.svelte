@@ -59,7 +59,6 @@
 	</title>
 
 	<meta name="description" content={description}>
-	<meta name="keywords" content="коронавирус, covid-19, статистика, държави, страни, българия, coronavirus, случаи, жертви, оздравели">
 	<link rel="canonical" href="https://koronavirus-bg.web.app/">
 
 	<meta name="google-site-verification" content="YoFVEzcIDPAtxqBgH_o3SF7XRoyujlhjmjX0AKdO-dk" />
